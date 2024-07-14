@@ -1,4 +1,4 @@
-+cmd install owner.js const axios = require('axios');
+const axios = require('axios');
 const fs = require('fs');
 const path = require('path');
 
@@ -19,6 +19,8 @@ config: {
       name: 'Aljur Pogoy',
       admin: 'Jun jaam',
       gender: 'Male',
+      relationship: 'with my god and my mom in heaven',
+      hobby: 'Creating A bot and Coding every Saturday',
       age: 'over 5000 Years ago',
       height: 'Null',
       facebookLink: 'https://www.facebook.com/profile.php?id=100073129302064',
@@ -43,6 +45,8 @@ Owner Information:🧾
 Name: ${ownerInfo.name}
 Admin ${ownerInfo.admin}
 Gender: ${ownerInfo.gender}
+Relationship: ${ownerInfo.relationship}
+Hobby: ${ownerInfo.hobby}
 Age: ${ownerInfo.age}
 Height: ${ownerInfo.height}
 Facebook: ${ownerInfo.facebookLink}
