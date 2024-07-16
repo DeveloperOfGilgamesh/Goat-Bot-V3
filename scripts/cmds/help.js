@@ -34,7 +34,7 @@ module.exports = {
       const categories = {};
       let msg = "";
 
-      msg += `╔═══════════╗\nℤ𝕒𝕤𝕤𝕙𝕠 𝔾𝕚𝕝𝕘𝕒𝕞𝕖𝕤𝕙 𝕓𝕖𝕥𝕒🗡️\n╚═══════════╝`; // replace with your name 
+      msg += `╔═══════════╗\nℤ𝕒𝕤𝕤𝕙𝕠 𝔾𝕚𝕝𝕘𝕒𝕞𝕖𝕤𝕙🗡️\n╚═══════════╝`; // replace with your name 
 
       for (const [name, value] of commands) {
         if (value.config.role > 1 && role < value.config.role) continue;
@@ -61,7 +61,7 @@ module.exports = {
       const totalCommands = commands.size;
       msg += `\nCurrently,the Gilgamesh bot has ${totalCommands} Commands that can be used\n`;
       msg += `Just type ${prefix} help cmdname to view the details of that Command\n`;
-      msg += `please Enjoy using Zassho Gilgamesh Beta⚔️`;
+      msg += `please Enjoy using Zassho Gilgamesh⚔️`;
       msg += `If you have any suggestions from this beta Zassho Gilgamesh please contact the owner or admin, type +owner to view the information of owner and admin`;
       msg += `[ ℤ𝕒𝕤𝕤𝕙𝕠 𝔾𝕚𝕝𝕘𝕒𝕞𝕖𝕤𝕙 beta🗡️ ]`; // its not decoy so change it if you want 
 
