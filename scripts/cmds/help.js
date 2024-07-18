@@ -3,7 +3,7 @@ const axios = require("axios");
 const path = require("path");
 const { getPrefix } = global.utils;
 const { commands, aliases } = global.GoatBot;
-const doNotDelete = "[ ℤ𝕒𝕤𝕤𝕙𝕠 𝔾𝕚𝕝𝕘𝕒𝕞𝕖𝕤𝕙 𝕓𝕖𝕥𝕒🗡️ ]"; // changing this wont change the goatbot V2 of list cmd it is just a decoyy
+const doNotDelete = "[ ℤ𝕒𝕤𝕤𝕙𝕠 𝔾𝕚𝕝𝕘𝕒𝕞𝕖𝕤𝕙 🗡️ ]"; // changing this wont change the goatbot V2 of list cmd it is just a decoyy
 
 module.exports = {
   config: {
@@ -62,8 +62,9 @@ module.exports = {
       msg += `\nCurrently,the Gilgamesh bot has ${totalCommands} Commands that can be used\n`;
       msg += `Just type ${prefix} help cmdname to view the details of that Command\n`;
       msg += `please Enjoy using Zassho Gilgamesh⚔️`;
+      msg += `You can Create Your own bot here made by Developers https://gilgmeshautobot.onrender.com
       msg += `If you have any suggestions from this beta Zassho Gilgamesh please contact the owner or admin, type +owner to view the information of owner and admin`;
-      msg += `[ ℤ𝕒𝕤𝕤𝕙𝕠 𝔾𝕚𝕝𝕘𝕒𝕞𝕖𝕤𝕙 beta🗡️ ]`; // its not decoy so change it if you want 
+      msg += `[ ℤ𝕒𝕤𝕤𝕙𝕠 𝔾𝕚𝕝𝕘𝕒𝕞𝕖𝕤𝕙🗡️ ]`; // its not decoy so change it if you want 
 
       await message.reply(msg);
     } else {
