@@ -3,7 +3,7 @@ const axios = require("axios");
 const path = require("path");
 const { getPrefix } = global.utils;
 const { commands, aliases } = global.GoatBot;
-const doNotDelete = "[ 義 𝗚𝗶𝘆𝘂 | 🌊 勇 ]";
+const doNotDelete = "[ 🗡️ | Shadow garden ]";
  
 module.exports = {
   config: {
@@ -61,18 +61,12 @@ module.exports = {
       const totalCommands = commands.size;
       msg += `\n𝘾𝙪𝙧𝙧𝙚𝙣𝙩𝙡𝙮, 𝙏𝙝𝙞𝙨 𝙗𝙤𝙩 𝙝𝙖𝙫𝙚  ${totalCommands} 𝙘𝙤𝙢𝙢𝙖𝙣𝙙𝙨 𝙩𝙝𝙖𝙩 𝙘𝙖𝙣 𝙗𝙚 𝙪𝙨𝙚𝙙. 𝙎𝙤𝙤𝙣 𝙢𝙤𝙧𝙚 𝙘𝙤𝙢𝙢𝙖𝙣𝙙𝙨 𝙬𝙞𝙡𝙡 𝙗𝙚 𝙖𝙙𝙙𝙚𝙙\n`;
       msg += `𝙏𝙮𝙥𝙚 ${prefix} 𝙝𝙚𝙡𝙥 𝗰𝙤𝙢𝙢𝙖𝙣𝙙 𝗡𝗮𝗺𝗲 𝘁𝗼 𝘃𝗶𝗲𝘄 𝘁𝗵𝗲 𝗱𝗲𝘁𝗮𝗶𝗹𝘀 𝗼𝗳 𝘁𝗵𝗮𝘁 𝗰𝗼𝗺𝗺𝗮𝗻𝗱\n`;
-      msg += `𝙁𝙊𝙍 𝘼𝙉𝙔 𝙊𝙏𝙃𝙀𝙍 𝙄𝙉𝙁𝙊𝙍𝙈𝘼𝙏𝙄𝙊𝙉 𝘾𝙊𝙉𝙏𝙍𝘼𝘾𝙏 𝙊𝙒𝙉𝙀𝙍 𝘽𝙔 𝙏𝙔𝙋𝙄𝙉𝙂 /𝘾𝘼𝙇𝙇𝘼𝘿 𝙃𝙀𝙇𝙋`;
+      msg += `𝙁𝙊𝙍 𝘼𝙉𝙔 𝙊𝙏𝙃𝙀𝙍 𝙄𝙉𝙁𝙊𝙍𝙈𝘼𝙏𝙄𝙊𝙉 𝘾𝙊𝙉𝙏𝙍𝘼𝘾𝙏 𝙊𝙒𝙉𝙀𝙍 𝘽𝙔 𝙏𝙔𝙋𝙄𝙉𝙂 ?𝘾𝘼𝙇𝙇𝘼𝘿 𝙃𝙀𝙇𝙋`;
  
  
       const helpListImages = [
  
-"https://i.imgur.com/DPTioGT.gif",
-"https://i.imgur.com/DPTioGT.gif', ",
-"https://i.imgur.com/DPTioGT.gif",
-"https://i.imgur.com/DPTioGT.gif",
-"https://i.imgur.com/RrRNARq.gif",
-"https://i.imgur.com/jBd6fgF.gif",
-"https://i.imgur.com/uB4nTr7.gif"
+"https://imgur.com/a/FCRN0KQ.gif"
 ];
  
  
