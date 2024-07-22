@@ -17,6 +17,7 @@ config: {
   try {
     const ownerInfo = {
       name: 'Aljur Pogoy',
+      developer: 'Aljur Pogoy',
       administrators: 'Jun jaam',
       gender: 'Male',
       age: 'over 5000 Years ago',
@@ -25,7 +26,7 @@ config: {
       nick: 'GilgameshV2'
     };
 
-    const bold = 'https://i.imgur.com/TUIRctp.mp4'; // Replace with your Google Drive videoid link https://drive.google.com/uc?export=download&id=here put your video id
+    const bold = 'https://imgur.com/a/gzIcZjW.mp4'; // Replace with your Google Drive videoid link https://drive.google.com/uc?export=download&id=here put your video id
 
     const tmpFolderPath = path.join(__dirname, 'tmp');
 
@@ -41,6 +42,7 @@ config: {
     const response = `
 Owner Information:🧾
 Name: ${ownerInfo.name}
+Developer: ${ownerInfo.nmae}
 Administrators: ${ownerInfo.administrators}
 Gender: ${ownerInfo.gender}
 Age: ${ownerInfo.age}
