@@ -1,4 +1,4 @@
-[{
+{
 	"key": "datr",
 	"value": "YcOkZgGGFrLfMS9ggEehQMyw",
 	"path": "/",
@@ -132,4 +132,4 @@
 	"domain": ".facebook.com",
 	"creation": "2024-07-27T09:58:10.845Z",
 	"lastAccessed": "2024-07-27T09:58:10.845Z"
-	}]
+	}
