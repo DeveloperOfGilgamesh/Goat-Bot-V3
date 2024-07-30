@@ -34,7 +34,7 @@ module.exports = {
       const categories = {};
       let msg = "";
 
-      msg += `╔═══════════╗\nEnkidu⛓️\n╚═══════════╝`; // replace with your name 
+      msg += `╔═══════════╗\n Gilgamesh🗡️\n╚═══════════╝`; // replace with your name 
 
       for (const [name, value] of commands) {
         if (value.config.role > 1 && role < value.config.role) continue;
@@ -50,7 +50,7 @@ module.exports = {
 
           const names = categories[category].commands.sort();
           for (let i = 0; i < names.length; i += 3) {
-            const cmds = names.slice(i, i + 3).map((item) => `⛓️${item}`);
+            const cmds = names.slice(i, i + 3).map((item) => `🗡️${item}`);
             msg += `\n│ ${cmds.join(" ".repeat(Math.max(1, 10 - cmds.join("").length)))}`;
           }
 
@@ -61,7 +61,7 @@ module.exports = {
       const totalCommands = commands.size;
       msg += `\nCurrently,the Gilgamesh bot has ${totalCommands} Commands that can be used\n`;
       msg += `Just type ${prefix} help cmdname to view the details of that Command\n`;
-      msg += `[ Zassho Enkidu ⛓️ ]`; // its not decoy so change it if you want 
+      msg += `[ Gilgamesh🗡️ ]`; // its not decoy so change it if you want 
 
       await message.reply(msg);
     } else {
