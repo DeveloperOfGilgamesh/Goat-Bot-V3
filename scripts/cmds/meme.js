@@ -1,78 +1,68 @@
-const axios = require("axios");
-const fs = require("fs");
-const path = require("path");
 
-const usernames = [
-  "meme_troll_nepal",
-  "memenepal",
- "hassan_mimix",
-  "relatablegram_m",
-  "therelatablebalika",
-];
-
-
-const paginationTokens = [
-  // dont add pagination token if you are using multiple usernames.
-
-];
+const axios = require('axios');
 
 module.exports = {
   config: {
-    name: "meme", 
-    aliases: ["mm"],
-    author: "Vex_Kshitiz",
-    version: "1.0",
-    cooldowns: 5, 
+    name: 'meme',
+    aliases: ['funnymeme', 'memepic'],
+    version: '1.0',
+    author: 'Samir Thakuri',
     role: 0,
-    shortDescription: "Get status video from Instagram user",
-    longDescription: "Get status video from a specified Instagram user.",
-    category: "utility",
-    guide: "{p}instauser",
+    category: 'funny',
+    shortDescription: {
+      en: 'Sends a random meme image.'
+    },
+    longDescription: {
+      en: 'Sends a random meme image fetched from the API.'
+    },
+    guide: {
+      en: '{pn} [search term]'
+    }
   },
-
-  // dont change anything below if you dont know how it works
-  onStart: async function ({ api, event, args, message }) {
-    api.setMessageReaction("✨", event.messageID, (err) => {}, true);
-
+  onStart: async function ({ api, event, args }) {
     try {
-      let username, token, apiUrl;
+      let url = 'https://api.imgflip.com/get_memes';
 
-      if (paginationTokens.length > 0) {
-        const randomUsernameIndex = Math.floor(Math.random() * usernames.length);
-        const randomTokenIndex = Math.floor(Math.random() * paginationTokens.length);
-        username = usernames[randomUsernameIndex];
-        token = paginationTokens[randomTokenIndex];
-        apiUrl = `https://insta-scrapper-kappa.vercel.app/kshitiz?username=${username}&token=${token}`;
-      } else {
-        const randomUsernameIndex = Math.floor(Math.random() * usernames.length);
-        username = usernames[randomUsernameIndex];
-        apiUrl = `https://insta-scrapper-kappa.vercel.app/kshitiz?username=${username}`;
+      if (args.length > 0) {
+        const searchTerm = args.join(' ');
+        url = `https://api.imgflip.com/caption_image?template_id=181913649&text0=${searchTerm}`;
       }
 
-      const apiResponse = await axios.get(apiUrl);
+      const response = await axios.get(url);
 
-      const videoURL = apiResponse.data.videoURL;
+      if (response.status !== 200 || !response.data || !response.data.success) {
+        throw new Error('Invalid or missing response from the API');
+      }
 
-      const videoResponse = await axios.get(videoURL, { responseType: "stream" });
+      let imageURL;
 
-      const tempVideoPath = path.join(__dirname, "cache", `insta_video.mp4`);
+      if (args.length > 0) {
+        imageURL = response.data.data.url;
+      } else {
+        const memes = response.data.data.memes;
+        const meme = memes[Math.floor(Math.random() * memes.length)];
+        imageURL = meme.url;
+      }
 
-      const writer = fs.createWriteStream(tempVideoPath);
-      videoResponse.data.pipe(writer);
+      const stream = await global.utils.getStreamFromURL(imageURL);
 
-      writer.on("finish", async () => {
-        const stream = fs.createReadStream(tempVideoPath);
+      if (!stream) {
+        throw new Error('Failed to fetch image from URL');
+      }
 
-        message.reply({
-          body: "",
-          attachment: stream,
-        });
+      const messageID = await api.sendMessage({
+        body: 'Here is a meme:',
+        attachment: stream
+      }, event.threadID);
 
-        api.setMessageReaction("✅", event.messageID, (err) => {}, true);
-      });
+      if (!messageID) {
+        throw new Error('Failed to send message with attachment');
+      }
+
+      console.log(`Sent meme image with message ID ${messageID}`);
     } catch (error) {
-      console.error(error);
-      message.reply("Sorry, an error occurred.");
+      console.error(`Failed to send meme image: ${error.message}`);
+      api.sendMessage('Sorry, something went wrong while trying to send a meme image. Please try again later.', event.threadID);
     }
   }
 };
